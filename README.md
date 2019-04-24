@@ -16,7 +16,15 @@ Other specifics include the following:
 Additionally, your program need only be concerned with reading logical address and translating them to their corresponding physical addresses. You do not need to support writing to the logical address space.  
 #### ADDRESS TRANSLATION  
 Your program will translate logical to physical address using a TLB and page table as outlined in the course’s textbook Section 7.4. First, the page number is extracted from the logical address, and the TLB is consulted. In the case of a TLB-hit, the frame number is obtained from the TLB. In the case of a TLB-miss, the page table must be consulted. In the latter case, either the frame number is obtained from the page table or a page fault occurs.   
-![](images/FIG%202.PNG) 
+![](images/FIG%202.PNG)   
+
+#### Test File:  
+You are provided the `addresses.txt` file, which contains integer values representing logical addresses ranging from 0 – 65,536 (the size of the virtual address space). You program will open this file, read each logical address and translate it to its corresponding physical address, and output the value of the signed byte at the physical address.   
+#### How to Begin: 
+First, write a simple program that extracts the page number and offset (based on Figure 1) from the following integer numbers:   
+1, 256, 32768, 32769, 128, 64434, 33153   
+Perhaps the easiest way to do this is by using the operators for bit-masking and bit-shifting. Once you can correctly establish the page number and offset from an integer number, you are ready to begin.    
+Initially, we suggest that you bypass the TLB and use only a page table.  You can integrate the TLB once your page table is working properly. Remember, address translation can work without a TLB; the TLB just makes it faster. When you are ready to implement the TLB, recall that it has only 16 entries, so you will need to use a replacement strategy when you update a full TLB. You may use either a FIFO or a LRU policy for updating you TLB.
 
 #### How to Run Your Program:
 Your program should run as follows: `< ./a.out addresses.txt >`   
