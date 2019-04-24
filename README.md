@@ -17,3 +17,12 @@ Additionally, your program need only be concerned with reading logical address a
 #### ADDRESS TRANSLATION  
 Your program will translate logical to physical address using a TLB and page table as outlined in the course’s textbook Section 7.4. First, the page number is extracted from the logical address, and the TLB is consulted. In the case of a TLB-hit, the frame number is obtained from the TLB. In the case of a TLB-miss, the page table must be consulted. In the latter case, either the frame number is obtained from the page table or a page fault occurs.   
 ![](images/FIG 2.PNG) 
+
+#### How to Run Your Program:
+Your program should run as follows: ./a.out addresses.txt   
+Your program will read in the file addresses.txt, which contains 1,000 logical addresses ranging from 0 – 65535.  
+Your program is to translate each logical address to a physical address and determine the contents of the signed byte stored at the correct physical address. (Hint: in the C language, the char data type occupies a byte of storage, so we suggest using char values.)   
+Your program is to output the following values:   
+1.  The logical address being translated (the integer value being read from addresses.txt).   
+2.  The corresponding physical address (what your program translates the logical address to).   
+3.  The signed byte value stored at the translated physical address
