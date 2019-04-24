@@ -19,7 +19,7 @@ Your program will translate logical to physical address using a TLB and page tab
 ![](images/FIG%202.PNG) 
 
 #### How to Run Your Program:
-Your program should run as follows: < ./a.out addresses.txt >   
+Your program should run as follows: `< ./a.out addresses.txt >`   
 Your program will read in the file addresses.txt, which contains 1,000 logical addresses ranging from 0 – 65535.  
 Your program is to translate each logical address to a physical address and determine the contents of the signed byte stored at the correct physical address. (Hint: in the C language, the char data type occupies a byte of storage, so we suggest using char values.)   
 Your program is to output the following values:   
